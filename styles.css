@@ -143,6 +143,180 @@ img {
 }
 
 /* =========================================================
+   Web Developer Code Terminal Preloader
+   ========================================================= */
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #08090C;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.site-preloader.done {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader-terminal {
+  width: min(520px, 94%);
+  background: #0F1116;
+  border: 1px solid rgba(222, 255, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(222, 255, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.preloader-bar {
+  background: #14171E;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.preloader-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.p-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.p-dot.red { background: #FF5F56; }
+.p-dot.yellow { background: #FFBD2E; }
+.p-dot.green { background: #27C93F; }
+
+.preloader-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #9CA3AF;
+  letter-spacing: 0.04em;
+}
+
+.preloader-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.preloader-console {
+  padding: 24px 26px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 2.2vw, 0.92rem);
+  line-height: 1.85;
+  color: #E5E7EB;
+  background: #0B0D11;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.preloader-code-line {
+  white-space: pre-wrap;
+}
+
+.preloader-code-line.indent {
+  padding-left: 24px;
+}
+
+.p-keyword { color: #F43F5E; font-weight: 600; }
+.p-var { color: #60A5FA; }
+.p-bracket { color: #FBBF24; font-weight: 700; }
+.p-prop { color: #93C5FD; }
+.p-str { color: #34D399; }
+.p-num { color: #F59E0B; font-weight: 700; }
+.p-comment { color: #6B7280; font-style: italic; }
+.p-accent { color: var(--accent); font-weight: 600; }
+
+.preloader-progress-wrap {
+  padding: 18px 24px 20px;
+  background: #0F1116;
+}
+
+.preloader-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.preloader-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #DEFF00 0%, #A3E635 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(222, 255, 0, 0.6);
+  transition: width 0.08s linear;
+}
+
+.preloader-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #9CA3AF;
+  letter-spacing: 0.06em;
+}
+
+.preloader-percent {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Light Theme overrides for Preloader */
+[data-theme="light"] .site-preloader {
+  background: #f8fafc;
+}
+[data-theme="light"] .preloader-terminal {
+  background: #ffffff;
+  border-color: rgba(26, 115, 232, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12), 0 0 35px rgba(26, 115, 232, 0.1);
+}
+[data-theme="light"] .preloader-bar {
+  background: #f1f5f9;
+}
+[data-theme="light"] .preloader-console {
+  background: #f8fafc;
+  color: #1e293b;
+}
+[data-theme="light"] .preloader-tag {
+  color: #1a73e8;
+}
+[data-theme="light"] .p-accent {
+  color: #1a73e8;
+}
+[data-theme="light"] .preloader-progress-wrap {
+  background: #ffffff;
+}
+[data-theme="light"] .preloader-progress-fill {
+  background: #1a73e8;
+  box-shadow: 0 0 14px rgba(26, 115, 232, 0.4);
+}
+[data-theme="light"] .preloader-percent {
+  color: #1a73e8;
+}
+
+/* =========================================================
    Navbar
    ========================================================= */
 .navbar {
@@ -3767,6 +3941,43 @@ img {
     width: 34px;
     height: 34px;
   }
+
+  /* Centered Impact Metric Cards on Tablets & Large Phones */
+  .about-stats-bento {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-stat-card {
+    padding: 26px 22px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .a-stat-icon {
+    margin: 0 auto 12px;
+  }
+
+  .a-stat-val {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .a-stat-title {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .a-stat-desc {
+    max-width: 340px;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 /* 3. Smartphones (<= 576px) */
@@ -3945,11 +4156,40 @@ img {
 
   .about-stats-bento {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .about-stat-card {
-    padding: 20px 18px;
+    padding: 24px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .a-stat-icon {
+    margin: 0 auto 12px;
+  }
+
+  .a-stat-val {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .a-stat-title {
+    text-align: center;
+    margin-bottom: 6px;
+    width: 100%;
+  }
+
+  .a-stat-desc {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
   }
 
   .live-showcase-grid {

@@ -885,10 +885,114 @@
     }
   }
 
+  /* -------------------------------------------------------
+     12. Developer Terminal Preloader Controller
+     ------------------------------------------------------- */
+  function initTerminalPreloader(onComplete) {
+    const preloader = document.getElementById('sitePreloader');
+    if (!preloader) {
+      if (typeof onComplete === 'function') onComplete();
+      return;
+    }
+
+    const fill = document.getElementById('preloaderFill');
+    const percentEl = document.getElementById('preloaderPercent');
+    const statusText = document.getElementById('preloaderStatusText');
+    const taskLabel = document.getElementById('preloaderTaskLabel');
+
+    let current = 0;
+    let dismissed = false;
+
+    const dismissPreloader = () => {
+      if (dismissed) return;
+      dismissed = true;
+
+      if (fill) fill.style.width = '100%';
+      if (percentEl) percentEl.textContent = '100%';
+      if (statusText) statusText.textContent = '"ready!"';
+      if (taskLabel) taskLabel.textContent = 'STATUS: PRODUCTION READY (200 OK)';
+
+      preloader.classList.add('done');
+
+      // Trigger hero kinetic cascade as preloader slides away
+      if (typeof onComplete === 'function') {
+        setTimeout(onComplete, 120);
+      }
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 700);
+    };
+
+    // Click or Escape to skip instantly
+    preloader.addEventListener('click', dismissPreloader);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !dismissed) dismissPreloader();
+    }, { once: true });
+
+    // Safety fallback: dismiss within 1.8s max
+    const safetyTimer = setTimeout(dismissPreloader, 1800);
+
+    if (prefersReducedMotion) {
+      clearTimeout(safetyTimer);
+      dismissPreloader();
+      return;
+    }
+
+    const startTime = performance.now();
+    const duration = 1050; // Snappy ~1.05s developer compiling effect
+
+    function step(timestamp) {
+      if (dismissed) return;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease out cubic for realistic compile rush
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.min(100, Math.floor(eased * 100));
+
+      if (fill) fill.style.width = current + '%';
+      if (percentEl) percentEl.textContent = current + '%';
+
+      if (taskLabel) {
+        if (current < 25) {
+          taskLabel.textContent = 'INITIALIZING MODULES & DOM...';
+        } else if (current < 55) {
+          taskLabel.textContent = 'COMPILING VITE BUNDLE & SVGS...';
+        } else if (current < 85) {
+          taskLabel.textContent = 'OPTIMIZING LIGHTHOUSE CORE VITALS...';
+        } else {
+          taskLabel.textContent = 'HYDRATING INTERACTIVE UI...';
+        }
+      }
+
+      if (statusText) {
+        if (current < 50) {
+          statusText.textContent = '"compiling_bundle..."';
+        } else if (current < 90) {
+          statusText.textContent = '"linking_modules..."';
+        } else {
+          statusText.textContent = '"ready!"';
+        }
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        clearTimeout(safetyTimer);
+        setTimeout(dismissPreloader, 140);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initKineticHeadingAnimations);
+    document.addEventListener('DOMContentLoaded', () => {
+      initTerminalPreloader(initKineticHeadingAnimations);
+    });
   } else {
-    initKineticHeadingAnimations();
+    initTerminalPreloader(initKineticHeadingAnimations);
   }
 
   // End of initialization
