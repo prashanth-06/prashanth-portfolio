@@ -3,10 +3,12 @@
    ========================================================= */
 
 :root {
-  --font-big: 'Big Shoulders Display', 'Big Shoulders', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-outfit: 'Outfit', 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-hero: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-big: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-outfit: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* Dark Editorial Theme (Default) */
@@ -803,32 +805,32 @@ img {
 .hero-tag {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   color: var(--accent);
-  font-size: 17px;
+  font-size: 13.5px;
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
-  font-family: var(--font-big);
+  font-family: var(--font-hero);
   animation: heroTagSlideIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
 }
 
 .hero-tag::before {
   content: "";
-  width: 50px;
+  width: 36px;
   height: 2px;
   background: var(--accent);
 }
 
 .hero-name {
-  font-family: var(--font-big);
-  font-weight: 900;
-  font-size: clamp(84px, 11vw, 175px);
-  line-height: 0.88;
+  font-family: var(--font-hero);
+  font-weight: 800;
+  font-size: clamp(52px, 6.6vw, 106px);
+  line-height: 0.94;
   text-transform: uppercase;
-  letter-spacing: -4px;
+  letter-spacing: -0.035em;
   margin-bottom: 24px;
   overflow: hidden;
 }
@@ -858,15 +860,16 @@ img {
 .hero-bottom {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 24px;
 }
 
 .hero-tagline {
-  font-family: var(--font-outfit);
-  font-size: 18px;
-  line-height: 32px;
-  color: #bdbdbd;
-  max-width: 480px;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.62;
+  color: #c0c0c0;
+  max-width: 500px;
+  font-weight: 450;
   will-change: transform, opacity;
 }
 
@@ -1044,16 +1047,16 @@ img {
 
 .heroImgPerson {
   width: 100%;
-  max-height: 560px;
+  max-height: 540px;
   object-fit: cover;
   object-position: center 15%;
   position: relative;
   z-index: 2;
-  border-radius: 20px;
-  filter: contrast(108%) brightness(102%);
+  border-radius: 24px;
+  filter: contrast(106%) brightness(102%);
   box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85);
-  mask-image: radial-gradient(ellipse 90% 92% at 50% 45%, #000 68%, transparent 100%), linear-gradient(to bottom, #000 82%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 92% at 50% 45%, #000 68%, transparent 100%), linear-gradient(to bottom, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent 100%);
   transition: transform 0.4s ease;
 }
 
@@ -1076,10 +1079,10 @@ img {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: var(--font-big);
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
   z-index: 10;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
   animation: floatBadge 4s ease-in-out infinite;
@@ -1143,7 +1146,7 @@ img {
 @media (max-width: 992px) {
   .hero-codenova-row {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
     text-align: center;
   }
   .hero-inner {
@@ -1152,33 +1155,13 @@ img {
     align-items: center;
   }
   .hero-tagline {
-    margin: 0 auto;
+    margin: 0 auto 24px;
   }
   .hero-cta-row {
     justify-content: center;
   }
   .tech-badge.css { left: 0; }
   .tech-badge.react { right: 0; }
-}
-
-@media (max-width: 576px) {
-  .hero-name {
-    font-size: clamp(56px, 16vw, 92px);
-    letter-spacing: -2px;
-  }
-  .tech-badge {
-    padding: 8px 12px;
-    font-size: 11px;
-  }
-  .tech-badge svg {
-    width: 22px;
-    height: 22px;
-  }
-  .tech-badge.css { left: -10px; }
-  .tech-badge.react { right: -10px; }
-  .tech-badge.html { left: 0; }
-  .tech-badge.js { right: 0; }
-  .tech-badge.figma { left: 0; }
 }
 
 /* =========================================================
@@ -3899,16 +3882,140 @@ img {
     padding: 28px 20px;
   }
 
-  .hero-person-main {
-    max-width: 380px;
-    margin: 0 auto;
+  /* Mobile Re-ordered Hero: Name -> Portrait Card -> Tagline -> CTAs */
+  .hero-codenova-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
   }
 
-  .tech-badge.html { left: -5px; }
-  .tech-badge.css { left: -25px; }
-  .tech-badge.figma { left: -10px; }
-  .tech-badge.js { right: 0; }
-  .tech-badge.react { right: -25px; }
+  .hero-inner {
+    display: contents; /* Promotes children to direct flex items */
+  }
+
+  .hero-tag {
+    order: 1;
+    margin-bottom: 8px;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .hero-tag::before {
+    width: 28px;
+  }
+
+  .hero-name {
+    order: 2;
+    font-size: clamp(38px, 9vw, 60px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .hero-person-col {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 16px;
+  }
+
+  .hero-person-main {
+    width: 100%;
+    max-width: 290px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-person-portrait {
+    width: 100%;
+    max-width: 280px;
+    height: 300px;
+    border-radius: 24px;
+    overflow: hidden !important;
+    position: relative !important;
+    border: 1px solid rgba(222, 255, 0, 0.28);
+    background: radial-gradient(circle at 50% 30%, #1c1e24 0%, #0d0e12 100%);
+    box-shadow: 0 16px 45px -12px rgba(0, 0, 0, 0.8), 0 0 28px -6px rgba(222, 255, 0, 0.16);
+  }
+
+  [data-theme="light"] .hero-person-portrait {
+    background: radial-gradient(circle at 50% 30%, #ffffff 0%, #f1f5f9 100%);
+    border-color: rgba(26, 115, 232, 0.25);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.12), 0 0 28px -6px rgba(26, 115, 232, 0.14);
+  }
+
+  .heroImgPerson {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center 12% !important;
+    border-radius: 24px !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    box-shadow: none !important;
+  }
+
+  .hero-person-glow {
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    height: 240px;
+    filter: blur(55px);
+  }
+
+  .tech-badge {
+    padding: 7px 11px;
+    font-size: 11px;
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  .tech-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .tech-badge.html { top: 6%; left: -14px; }
+  .tech-badge.css { top: 48%; left: -18px; }
+  .tech-badge.figma { bottom: 6%; left: -12px; }
+  .tech-badge.js { top: 8%; right: -14px; }
+  .tech-badge.react { top: 52%; right: -18px; }
+
+  .hero-bottom {
+    order: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .hero-tagline {
+    order: 1;
+    margin: 0 auto;
+    max-width: 380px;
+    font-size: 14.5px;
+    line-height: 1.58;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .hero-cta-row {
+    order: 2;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+  }
 
   .showcase-header {
     flex-direction: column;
@@ -4012,30 +4119,36 @@ img {
   }
 
   .hero {
-    padding: 26px 0 42px;
+    padding: 18px 0 34px;
   }
 
   .hero-tag {
-    font-size: 13px;
-    letter-spacing: 2.2px;
-    margin-bottom: 14px;
+    font-size: 12.5px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
   }
 
   .hero-tag::before {
-    width: 28px;
+    width: 24px;
   }
 
   .hero-name {
-    font-size: clamp(46px, 13.5vw, 68px);
-    letter-spacing: -2px;
-    margin-bottom: 18px;
-    line-height: 0.9;
+    font-size: clamp(34px, 9.2vw, 46px);
+    letter-spacing: -0.025em;
+    margin-bottom: 12px;
+    line-height: 1.04;
+  }
+
+  .hero-person-portrait {
+    max-width: 270px;
+    height: 280px;
+    border-radius: 20px;
   }
 
   .hero-tagline {
-    font-size: 15px;
-    line-height: 26px;
-    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 340px;
   }
 
   .hero-cta-row {
@@ -4046,32 +4159,32 @@ img {
 
   .btn-quote {
     flex: 1 1 135px;
-    font-size: 13.5px;
+    font-size: 13px;
     padding: 11px 16px;
     justify-content: center;
   }
 
   .hero-person-main {
-    max-width: 310px;
+    max-width: 290px;
     margin: 0 auto;
   }
 
   .tech-badge {
     padding: 6px 11px;
-    font-size: 11px;
+    font-size: 10.5px;
     border-radius: 8px;
   }
 
   .tech-badge svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
   }
 
-  .tech-badge.html { top: 6%; left: 6px; }
-  .tech-badge.css { top: 36%; left: -6px; }
-  .tech-badge.figma { bottom: 8%; left: 8px; }
-  .tech-badge.js { top: 8%; right: 6px; }
-  .tech-badge.react { top: 40%; right: -6px; }
+  .tech-badge.html { top: 6%; left: -12px; }
+  .tech-badge.css { top: 48%; left: -16px; }
+  .tech-badge.figma { bottom: 6%; left: -10px; }
+  .tech-badge.js { top: 8%; right: -12px; }
+  .tech-badge.react { top: 52%; right: -16px; }
 
   .crossed-ribbons {
     padding: 30px 0 38px;
@@ -4271,8 +4384,13 @@ img {
   }
 
   .hero-name {
-    font-size: clamp(38px, 12vw, 48px);
-    letter-spacing: -1px;
+    font-size: clamp(30px, 8.8vw, 36px);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-person-portrait {
+    max-width: 245px;
+    height: 255px;
   }
 
   .hero-cta-row {
@@ -4293,8 +4411,11 @@ img {
     height: 16px;
   }
 
-  .tech-badge.css { left: 0; }
-  .tech-badge.react { right: 0; }
+  .tech-badge.css { left: -8px; }
+  .tech-badge.react { right: -8px; }
+  .tech-badge.html { left: -6px; }
+  .tech-badge.js { right: -6px; }
+  .tech-badge.figma { left: -4px; }
 
   .experience-stamp-badge {
     width: 98px;
