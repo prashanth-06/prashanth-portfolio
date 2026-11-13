@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prashanth Punna — Web Developer</title>
+  <meta name="description" content="Prashanth Punna — Web Developer in Hyderabad specializing in JavaScript, React.js, Next.js, responsive UI, REST APIs, CRM integration, and web performance optimization." />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Smooth Custom Cursor (desktop fine pointers) -->
+  <div class="mouse-cursor cursor-outer" id="cursorOuter" aria-hidden="true"></div>
+  <div class="mouse-cursor cursor-inner" id="cursorInner" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <div class="nav-brand-logo">
+          <svg class="dev-logo-svg" width="38" height="38" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="headerDevBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1A1D23"/>
+                <stop offset="100%" stop-color="#0E1013"/>
+              </linearGradient>
+              <linearGradient id="headerDevRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#DEFF00"/>
+                <stop offset="100%" stop-color="#9BC000"/>
+              </linearGradient>
+            </defs>
+            <circle cx="22" cy="22" r="20.5" fill="url(#headerDevBg)" stroke="url(#headerDevRing)" stroke-width="1.8"/>
+            <!-- Dark Tech Hoodie Body -->
+            <path d="M10 40c0-6.2 5.4-11 12-11s12 4.8 12 11" fill="#1F242C"/>
+            <!-- Hoodie Inner Collar / V-neck -->
+            <path d="M17.5 29l4.5 4.5 4.5-4.5" fill="#14171C" stroke="#DEFF00" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Neck -->
+            <path d="M19 23h6v6.5h-6z" fill="#E5B582"/>
+            <!-- Face -->
+            <path d="M15 17c0 4.2 3.1 7.2 7 7.2s7-3 7-7.2v-2.5H15V17z" fill="#F0C294"/>
+            <!-- Sharp Modern Hairstyle (Textured Quiff) -->
+            <path d="M14.5 16.5c-.3-4 1.8-8.5 7.5-8.5 5.2 0 7.8 3.5 7.8 7.5 0 .8-.1 1.5-.3 2-1-.8-2.6-1.2-4.5-1.2-2.8 0-4.5.8-6.5.4-.8-.1-2.2-.4-4-.2z" fill="#181B20"/>
+            <path d="M16 11c3-2.5 8-2.8 11.5-.5-1.2-.8-3.5-1.5-6-1.5-2.5 0-4.2.8-5.5 2z" fill="#2C323D"/>
+            <!-- Sleek Black Acetate Glasses with Lime Highlight -->
+            <rect x="16.2" y="16.2" width="4.8" height="3.4" rx="1" fill="#111317" stroke="#DEFF00" stroke-width="0.9"/>
+            <rect x="23" y="16.2" width="4.8" height="3.4" rx="1" fill="#111317" stroke="#DEFF00" stroke-width="0.9"/>
+            <line x1="21" y1="17.6" x2="23" y2="17.6" stroke="#DEFF00" stroke-width="0.9"/>
+            <line x1="17.2" y1="17" x2="19.8" y2="17" stroke="#FFFFFF" stroke-width="0.75" stroke-linecap="round" opacity="0.85"/>
+            <line x1="24" y1="17" x2="26.6" y2="17" stroke="#FFFFFF" stroke-width="0.75" stroke-linecap="round" opacity="0.85"/>
+            <!-- Confident Smile -->
+            <path d="M20.2 21.6c1 .6 2.6 .6 3.6 0" stroke="#8C5E3C" stroke-width="1" stroke-linecap="round"/>
+            <!-- Code Bracket Badge floating in lower corner -->
+            <g transform="translate(24, 26)">
+              <circle cx="7" cy="7" r="6" fill="#0E1013" stroke="#DEFF00" stroke-width="1.2"/>
+              <path d="M5.5 5.5L4 7l1.5 1.5M8.5 5.5L10 7l-1.5 1.5M7.8 5l-1.6 4" stroke="#DEFF00" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="nav-brand-text">
+          <span class="brand-name"><span class="brand-bracket">&lt;</span>Prashanth <span class="brand-surname">Punna</span><span class="brand-bracket">/&gt;</span></span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#education" class="nav-link" data-section="education">Education</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark or light theme" title="Toggle theme">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <a href="Prashanth_Punna_Resume.pdf" download="Prashanth_Punna_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm nav-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Brochure</span>
+        </a>
+
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-nav">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#education" class="mobile-link">Education</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="Prashanth_Punna_Resume.pdf" download="Prashanth_Punna_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-accent mobile-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Brochure
+      </a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ======================== HERO Section (CodeNova Inspired) ========================== -->
+    <section class="hero hero-codenova" id="hero">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-bg-word" aria-hidden="true">PUNNA</div>
+
+      <div class="container">
+        <div class="hero-codenova-row">
+          <!-- Left Column: Big Shoulders Bold Typography, Bio, CTA -->
+          <div class="hero-inner">
+            <p class="hero-tag">👋 HELLO, I'M</p>
+            <h1 class="hero-name">
+              <span class="l1" id="hl1">PRASHANTH</span>
+              <span class="l2" id="hl2">PUNNA</span>
+            </h1>
+            <div class="hero-bottom">
+              <p class="hero-tagline">
+                Experienced Web Developer Focused on Responsive Design, High Performance, Creative User Experiences, Modern UI/UX Solutions, and Building Fast for Clients Worldwide.
+              </p>
+              <div class="hero-cta-row">
+                <a class="btn-quote" href="#projects">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span>My Portfolio</span>
+                </a>
+                <a class="btn-quote btn-trasp" href="#contact">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Hire Me</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Person + Neon Lime Glow + 5 Floating Tech Badges -->
+          <div class="hero-person-col">
+            <div class="hero-person-main">
+              <!-- Back Glow -->
+              <div class="hero-person-glow" aria-hidden="true"></div>
+
+              <!-- 5 Tech Badges Matching CodeNova Theme -->
+              <div class="tech-badge html">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M4.14 2L5.8 20.6 12 22.3l6.2-1.7 1.66-18.6H4.14z" fill="#E44D26"/>
+                  <path d="M12 3.8v16.7l4.8-1.3 1.3-15.4H12z" fill="#F16529"/>
+                  <path d="M7.4 6.8h9.2l-.2 2.3H9.5l.2 2.3h6.6l-.6 6.9-3.7 1-3.7-1-.3-3.4h2.2l.2 1.8 1.6.4 1.6-.4.2-2.3H7.6l-.2-7.6z" fill="#fff"/>
+                </svg>
+                <span>HTML</span>
+              </div>
+
+              <div class="tech-badge css">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <path d="M4.14 2L5.8 20.6 12 22.3l6.2-1.7 1.66-18.6H4.14z" fill="#1572B6"/>
+                  <path d="M12 3.8v16.7l4.8-1.3 1.3-15.4H12z" fill="#33A9DC"/>
+                  <path d="M7.4 6.8h9.2l-.2 2.3H9.5l.2 2.3h6.6l-.6 6.9-3.7 1-3.7-1-.3-3.4h2.2l.2 1.8 1.6.4 1.6-.4.2-2.3H7.6l-.2-7.6z" fill="#fff"/>
+                </svg>
+                <span>CSS</span>
+              </div>
+
+              <div class="tech-badge js">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  <rect width="24" height="24" rx="4" fill="#F7DF1E"/>
+                  <path d="M7.5 17.5l1.8-1.1c.4.7.7 1.2 1.4 1.2.7 0 1.2-.3 1.2-1.1v-5.7H14v5.7c0 1.9-1.1 2.7-2.7 2.7-1.4 0-2.3-.7-2.8-1.7zm7-0.1l1.8-1c.5.8 1.1 1.3 2.1 1.3.8 0 1.4-.4 1.4-1 0-.7-.5-1-1.6-1.5-1.9-.8-3.1-1.6-3.1-3.4 0-1.7 1.3-3 3.2-3 1.4 0 2.4.5 3.1 1.7l-1.7 1.1c-.4-.7-.8-1-1.4-1-.7 0-1.1.4-1.1.9 0 .6.4.9 1.4 1.3 2 .9 3.3 1.7 3.3 3.6 0 2.1-1.6 3.2-3.6 3.2-2 0-3.3-1-4-2.2z" fill="#000"/>
+                </svg>
+                <span>JavaScript</span>
+              </div>
+
+              <div class="tech-badge react">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="1.8">
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)" />
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
+                  <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
+                  <circle cx="12" cy="12" r="2.2" fill="#61DAFB" />
+                </svg>
+                <span>React</span>
+              </div>
+
+              <div class="tech-badge figma">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M8 24c2.2 0 4-1.8 4-4v-4H8c-2.2 0-4 1.8-4 4s1.8 4 4 4z" fill="#0ACF83"/>
+                  <path d="M4 12c0-2.2 1.8-4 4-4h4v8H8c-2.2 0-4-1.8-4-4z" fill="#A259FF"/>
+                  <path d="M4 4c0-2.2 1.8-4 4-4h4v8H8C5.8 8 4 6.2 4 4z" fill="#F24E1E"/>
+                  <path d="M12 0h4c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4V0z" fill="#FF7262"/>
+                  <path d="M20 12c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4z" fill="#1ABCFE"/>
+                </svg>
+                <span>Figma</span>
+              </div>
+
+              <!-- Person Image with Diagonal Shine Wrapper -->
+              <div class="hero-person-portrait prime-image-anime">
+                <img class="heroImgPerson" src="portfolio-image.png" alt="Prashanth Punna — Web Developer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crossed Diagonal Ticker Scrollers -->
+    <div class="crossed-ribbons" aria-label="Developer highlights ticker">
+      <!-- Back Ribbon (Light, tilted slightly up) -->
+      <div class="ribbon ribbon-back">
+        <div class="ribbon-track ribbon-track-reverse">
+          <div class="ribbon-group">
+            <span class="ribbon-star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>FRONTEND DEVELOPER</span>
+            <span class="ribbon-star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>REACT.JS &amp; NEXT.JS</span>
+            <span class="ribbon-star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>REST API &amp; CRM INTEGRATION</span>
+            <span class="ribbon-star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>10+ WEB APPS DEPLOYED</span>
+            <span class="ribbon-star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>HYDERABAD, INDIA</span>
+          </div>
+          <div class="ribbon-group" aria-hidden="true">
+            <span class="ribbon-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>FRONTEND DEVELOPER</span>
+            <span class="ribbon-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>REACT.JS &amp; NEXT.JS</span>
+            <span class="ribbon-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>REST API &amp; CRM INTEGRATION</span>
+            <span class="ribbon-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>10+ WEB APPS DEPLOYED</span>
+            <span class="ribbon-star">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>HYDERABAD, INDIA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Front Ribbon (Dark with #DEFF00 lime highlights, tilted slightly down) -->
+      <div class="ribbon ribbon-front">
+        <div class="ribbon-track ribbon-track-forward">
+          <div class="ribbon-group">
+            <span class="ribbon-star lime" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>PRASHANTH PUNNA</span>
+            <span class="ribbon-star lime-outline" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+            </span>
+            <span class="text-lime">WEB DEVELOPER</span>
+            <span class="ribbon-star lime" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>JAVASCRIPT (ES6+)</span>
+            <span class="ribbon-star lime-outline" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+            </span>
+            <span class="text-lime">PAGESPEED +30%</span>
+            <span class="ribbon-star lime" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>PHP &amp; WORDPRESS</span>
+          </div>
+          <div class="ribbon-group" aria-hidden="true">
+            <span class="ribbon-star lime">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>PRASHANTH PUNNA</span>
+            <span class="ribbon-star lime-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+            </span>
+            <span class="text-lime">WEB DEVELOPER</span>
+            <span class="ribbon-star lime">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>JAVASCRIPT (ES6+)</span>
+            <span class="ribbon-star lime-outline">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+            </span>
+            <span class="text-lime">PAGESPEED +30%</span>
+            <span class="ribbon-star lime">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L14.8 9.2L23 12L14.8 14.8L12 23L9.2 14.8L1 12L9.2 9.2L12 1Z"/></svg>
+            </span>
+            <span>PHP &amp; WORDPRESS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section (Enhanced Bento & Career Overview) -->
+    <section class="section" id="about">
+      <div class="container">
+        <!-- Section Top -->
+        <div class="section-top" data-reveal>
+          <span class="eyebrow">01 / ABOUT ME</span>
+          <h2 class="section-heading">Practical front-end engineering backed by real production delivery.</h2>
+          <p class="section-sub">
+            Bridging visual design precision with scalable web architecture, clean component modularity, and quantifiable performance gains.
+          </p>
+        </div>
+
+        <!-- About Bento Layout -->
+        <div class="about-bento" data-reveal>
+          <!-- Main Narrative Card (Left) -->
+          <div class="about-story-card">
+            <div class="about-story-header">
+              <div class="about-story-badge-group">
+                <div class="about-story-badge">
+                  <span class="status-pulse-dot" aria-hidden="true"></span>
+                  <span>Web Developer • G-Rank Digital Service</span>
+                </div>
+                <div class="about-experience-pill">
+                  <span class="exp-pill-star">✦</span>
+                  <span>Hyderabad, India • Full-Time</span>
+                </div>
+              </div>
+
+              <!-- Rotating 2.5 Years Experience Stamp Badge -->
+              <div class="experience-stamp-badge" title="2.5+ Years of Web Development Experience" aria-label="2.5 Years of Experience">
+                <div class="stamp-rotating-wrap">
+                  <svg class="stamp-svg" viewBox="0 0 160 160" width="124" height="124" aria-hidden="true">
+                    <defs>
+                      <path id="stampPath" d="M 80, 80 m 0, -54 a 54,54 0 1,1 0,108 a 54,54 0 1,1 0,-108" fill="none" />
+                    </defs>
+                    <circle cx="80" cy="80" r="74" class="stamp-outer-ring" />
+                    <circle cx="80" cy="80" r="38" class="stamp-inner-ring" />
+                    <text class="stamp-text">
+                      <textPath href="#stampPath" xlink:href="#stampPath" textLength="328" lengthAdjust="spacing">
+                        ★ 2.5 YEARS EXPERIENCE ★ FRONTEND DEVELOPER 
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+                <div class="stamp-center">
+                  <span class="stamp-num">2.5</span>
+                  <span class="stamp-lbl">YEARS</span>
+                  <span class="stamp-sub">EXPERIENCE</span>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="about-story-title">
+              Engineering web experiences that combine visual precision with high performance.
+            </h3>
+
+            <p class="lead-text">
+              I’m a Web Developer based in Hyderabad with <strong>2.5 years of experience</strong> building and maintaining enterprise client websites at <strong>G-Rank Digital Service Pvt. Ltd.</strong>, holding a B.Tech in Computer Science &amp; Engineering from <strong>RGUKT IIIT Basar</strong>.
+            </p>
+
+            <p class="body-text">
+              Across 10+ live client deployments, my work focuses on building responsive web interfaces, executing full site revamps, integrating REST APIs with CRM systems, and optimizing Core Web Vitals to deliver up to +30% PageSpeed improvements. I specialize in modern JavaScript (ES6+), React.js, Next.js, and technical SEO audits using Lighthouse and W3C standards.
+            </p>
+
+            <!-- Quick Highlight Chips -->
+            <div class="about-chips">
+              <span class="chip chip-accent">✦ 2.5+ Years Experience</span>
+              <span class="chip">RGUKT IIIT Basar Graduate</span>
+              <span class="chip">React 19 &amp; Next.js</span>
+              <span class="chip">REST API &amp; CRM Lead Flows</span>
+              <span class="chip">Core Web Vitals &amp; PageSpeed</span>
+              <span class="chip">Responsive UI / UX</span>
+            </div>
+          </div>
+
+          <!-- Impact Metrics Grid (Right) -->
+          <div class="about-stats-bento">
+            <div class="about-stat-card">
+              <div class="a-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <div class="a-stat-val"><span class="counter" data-target="10">10</span>+</div>
+              <div class="a-stat-title">Web Apps Deployed</div>
+              <div class="a-stat-desc">Production platforms across pharma, industrial &amp; education sectors.</div>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="a-stat-icon accent-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h8l-1 8 11-12h-8l1-8z"/></svg>
+              </div>
+              <div class="a-stat-val text-accent"><span class="counter" data-target="30">30</span>%</div>
+              <div class="a-stat-title">PageSpeed Boost</div>
+              <div class="a-stat-desc">Lighthouse performance gains via asset minification &amp; clean DOM.</div>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="a-stat-icon accent-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div class="a-stat-val text-accent">2.5+ <span class="a-stat-unit" style="font-size: 0.95rem; font-weight: 600; color: var(--text-muted);">Yrs</span></div>
+              <div class="a-stat-title">Professional Experience</div>
+              <div class="a-stat-desc">Hands-on enterprise client site revamps, UI performance &amp; CRM integration at G-Rank.</div>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="a-stat-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="a-stat-val"><span class="counter" data-target="500">500</span>+</div>
+              <div class="a-stat-title">Tech Fest Coordinated</div>
+              <div class="a-stat-desc">Technical volunteer leadership at Abhiyanth National Tech Fest.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Principles / Workflow Strip -->
+        <div class="about-workflow" data-reveal>
+          <div class="workflow-card">
+            <span class="workflow-num">01</span>
+            <div class="workflow-body">
+              <h4>Modern Frontend Architecture</h4>
+              <p>Semantic HTML5, modular CSS/SCSS, React components, and responsive grid layouts designed for any screen.</p>
+            </div>
+          </div>
+
+          <div class="workflow-card">
+            <span class="workflow-num">02</span>
+            <div class="workflow-body">
+              <h4>API &amp; Lead Conversion Pipelines</h4>
+              <p>Client-side validation, PHP mailers, REST API endpoints, and direct CRM integrations that never drop leads.</p>
+            </div>
+          </div>
+
+          <div class="workflow-card">
+            <span class="workflow-num">03</span>
+            <div class="workflow-body">
+              <h4>Speed &amp; Core Web Vitals Audits</h4>
+              <p>Rigorous performance tuning with PageSpeed Insights, asset compression, lazy loading, and W3C validation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="section-top" data-reveal>
+          <span class="eyebrow">02 / SKILLS</span>
+          <h2 class="section-heading">Technical Toolkit</h2>
+          <p class="section-sub">Core languages, frameworks, integration workflows, and optimization tools used in production.</p>
+        </div>
+
+        <div class="pill-tabs" role="tablist" aria-label="Skill categories" data-reveal>
+          <button type="button" class="pill-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="pill-tab" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+          <button type="button" class="pill-tab" data-filter="backend" role="tab" aria-selected="false">Backend &amp; APIs</button>
+          <button type="button" class="pill-tab" data-filter="tools" role="tab" aria-selected="false">Tools &amp; SEO</button>
+          <button type="button" class="pill-tab" data-filter="databases" role="tab" aria-selected="false">Databases</button>
+        </div>
+
+        <div class="two-col-grid" id="skillsGrid">
+          <div class="card-item" data-category="frontend" data-reveal>
+            <div class="item-head">
+              <span class="item-icon" aria-hidden="true">&lt;/&gt;</span>
+              <h3>Languages</h3>
+              <span class="badge badge-accent">Core</span>
+            </div>
+            <p class="item-desc">JavaScript (ES6+), HTML5, CSS3, Python, PHP, and SQL for full-stack client web development.</p>
+            <div class="chip-row">
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="24" height="24" rx="3.5" fill="#F7DF1E"/><path d="M7 17.5c.6.9 1.5 1.4 2.7 1.4 1.5 0 2.5-.8 2.5-2.6V8h-2.2v8.3c0 .7-.3 1.1-.9 1.1-.5 0-.8-.3-1-.8l-1.1.9zm8.8-1.5c.8.5 1.6.8 2.4.8 1 0 1.6-.5 1.6-1.1 0-.7-.5-1-1.7-1.6l-.8-.3c-1.6-.7-2.7-1.6-2.7-3.1 0-1.8 1.5-3.2 3.8-3.2 1.4 0 2.5.4 3.3 1.1l-1.1 1.3c-.6-.5-1.4-.8-2.2-.8-1 0-1.5.5-1.5 1 0 .6.4.9 1.6 1.4l.8.3c1.8.8 2.8 1.7 2.8 3.3 0 2-1.6 3.3-4.1 3.3-1.6 0-3-.5-3.9-1.4l1.2-1.5z" fill="#000"/></svg>
+                <span>JavaScript (ES6+)</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#E44D26" d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z"/><path fill="#F16529" d="M12 3.8v16.4l5.9-1.5 1.4-14.9H12z"/><path fill="#EBEBEB" d="M12 8.4H7.8l.3 3.4h3.9V8.4zm0 6.6l-.1.0-2.5-.7-.2-1.9H7.4l.3 4 4.3 1.2V15z"/><path fill="#FFF" d="M12 8.4V11.8h3.8l-.4 4.2-3.4.9v2.2l5.7-1.6.8-9.1H12z"/></svg>
+                <span>HTML5</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1572B6" d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z"/><path fill="#33A9DC" d="M12 3.8v16.4l5.9-1.5 1.4-14.9H12z"/><path fill="#EBEBEB" d="M12 8.4H7.8l.3 3.4h3.9V8.4zm0 6.6l-.1.0-2.5-.7-.2-1.9H7.4l.3 4 4.3 1.2V15z"/><path fill="#FFF" d="M12 8.4V11.8h3.8l-.4 4.2-3.4.9v2.2l5.7-1.6.8-9.1H12z"/></svg>
+                <span>CSS3</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><ellipse cx="12" cy="12" rx="11" ry="7" fill="#777BB4"/><path fill="#FFF" d="M6.8 14.5H5.5l1.3-5.2h2.2c1.3 0 2 .6 1.8 1.7-.2 1.1-1.1 1.7-2.2 1.7H7.4l-.6 1.8zm1.2-3.2h.9c.7 0 1.1-.3 1.2-.8.1-.4-.2-.8-.7-.8h-.9l-.5 1.6zm4.6 3.2h-1.3l1.3-5.2h1.3l-.5 2.1h2.3l.5-2.1h1.3l-1.3 5.2h-1.3l.5-2.1h-2.3l-.5 2.1zm6.5 0h-1.3l1.3-5.2h2.2c1.3 0 2 .6 1.8 1.7-.2 1.1-1.1 1.7-2.2 1.7h-1.2l-.6 1.8zm1.2-3.2h.9c.7 0 1.1-.3 1.2-.8.1-.4-.2-.8-.7-.8h-.9l-.5 1.6z"/></svg>
+                <span>PHP</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#3776AB" d="M11.9 2c-3.1 0-2.9 1.3-2.9 1.3l.01 1.4h2.9v.4H6.3S3.5 4.8 3.5 8c0 3.1 1.7 3 1.7 3h1.1v-1.5s-.1-1.8 1.8-1.8h3v-.5c0-.9.8-1.6 1.7-1.6h2.7S15 2 11.9 2zm-1.7 1.2c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z"/><path fill="#FFD43B" d="M12.1 22c3.1 0 2.9-1.3 2.9-1.3l-.01-1.4h-2.9v-.4h5.6s2.8.3 2.8-2.9c0-3.1-1.7-3-1.7-3h-1.1v1.5s.1 1.8-1.8 1.8h-3v.5c0 .9-.8 1.6-1.7 1.6H8.5S9 22 12.1 22zm1.7-1.2c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z"/></svg>
+                <span>Python</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#00BCF2" d="M12 3c-4.97 0-9 1.34-9 3v12c0 1.66 4.03 3 9 3s9-1.34 9-3V6c0-1.66-4.03-3-9-3zm0 2c4.41 0 7 1.13 7 1.5S16.41 8 12 8 5 6.87 5 6.5 7.59 5 12 5zm0 14c-4.41 0-7-1.13-7-1.5V15.3c1.78.95 4.3 1.45 7 1.45s5.22-.5 7-1.45V17.5c0 .37-2.59 1.5-7 1.5zm0-4.5c-4.41 0-7-1.13-7-1.5v-2.2c1.78.95 4.3 1.45 7 1.45s5.22-.5 7-1.45v2.2c0 .37-2.59 1.5-7 1.5z"/></svg>
+                <span>SQL</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="card-item" data-category="frontend" data-reveal>
+            <div class="item-head">
+              <span class="item-icon" aria-hidden="true">[]</span>
+              <h3>Frameworks &amp; Libraries</h3>
+              <span class="badge badge-accent">UI</span>
+            </div>
+            <p class="item-desc">Building responsive interfaces and component-based web applications with modern and classic stacks.</p>
+            <div class="chip-row">
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><ellipse cx="12" cy="12" rx="3.2" ry="8.8" transform="rotate(30 12 12)" fill="none" stroke="#61DAFB" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="3.2" ry="8.8" transform="rotate(90 12 12)" fill="none" stroke="#61DAFB" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="3.2" ry="8.8" transform="rotate(150 12 12)" fill="none" stroke="#61DAFB" stroke-width="1.3"/><circle cx="12" cy="12" r="1.8" fill="#61DAFB"/></svg>
+                <span>React.js</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#000" stroke="#FFF" stroke-width="1"/><path d="M8 8v8h2v-4.5l4.5 4.5h2V8h-2v4.5L10 8H8z" fill="#FFF"/></svg>
+                <span>Next.js</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#539E43" d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2zm0 2.3L5.34 8.15v7.7L12 19.7l6.66-3.85v-7.7L12 4.3z"/><path fill="#83CD29" d="M12 7l4 2.3v4.6l-4 2.3-4-2.3V9.3L12 7z"/></svg>
+                <span>Node.js</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#7952B3"/><path d="M7 6.5h4.2c1.8 0 2.9.8 2.9 2.1 0 1-.6 1.7-1.6 1.9 1.2.3 1.9 1.1 1.9 2.3 0 1.5-1.3 2.4-3.2 2.4H7V6.5zm2.4 3.4h1.6c.7 0 1.1-.3 1.1-.8 0-.5-.4-.8-1.1-.8H9.4v1.6zm0 3.3h1.8c.8 0 1.2-.3 1.2-.9 0-.5-.4-.9-1.2-.9H9.4v1.8z" fill="#FFF"/></svg>
+                <span>Bootstrap</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0769AD"/><path d="M16.5 6.5c-1.2.7-2.6 1.1-4 1.1-2 0-3.6-.8-4.7-2.1-.2 1.4.2 3.1 1.2 4.4 1 1.3 2.5 2 4.2 2 1.1 0 2.2-.3 3.1-.8l.2 1.2c-.9.5-2.1.8-3.3.8-2.6 0-4.8-1.3-6.1-3.4-.6 2.5.1 5.3 2 7.2 1.9 1.9 4.6 2.6 7.2 2 .5-.1.9-.3 1.4-.5l.8 1.4c-.7.4-1.5.7-2.3.8-3.4.8-7-.2-9.4-2.6-2.5-2.5-3.3-6.1-2.4-9.4.2-.8.5-1.6 1-2.3L4 6c.5-.8 1.1-1.5 1.8-2.1l1.3 1c-.5.5-.9 1.1-1.3 1.7 1.4 1.4 3.3 2.3 5.4 2.3 1.4 0 2.8-.4 4-1.1l1.3 1.2z" fill="#FFF"/></svg>
+                <span>jQuery</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="card-item" data-category="backend" data-reveal>
+            <div class="item-head">
+              <span class="item-icon" aria-hidden="true">⇄</span>
+              <h3>Web &amp; API Integrations</h3>
+              <span class="badge badge-muted">Workflows</span>
+            </div>
+            <p class="item-desc">Connecting front-end lead capture forms directly to CRM systems, mailers, and validation layers.</p>
+            <div class="chip-row">
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="4" fill="none" stroke="#00D2D3" stroke-width="1.8"/><path d="M7 12h10M14 9l3 3-3 3M10 15l-3-3 3-3" stroke="#DEFF00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>RESTful APIs</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-4 4-4-4h2.5V9h3v4H17z" fill="#FF9900"/></svg>
+                <span>CRM Integration</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#00E676"/></svg>
+                <span>Form Validation</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="2" y="3" width="13" height="11" rx="1.5" fill="none" stroke="#00B0FF" stroke-width="1.6"/><path d="M5 17h7M8.5 14v3" stroke="#00B0FF" stroke-width="1.6" stroke-linecap="round"/><rect x="13.5" y="8" width="8.5" height="13" rx="1.5" fill="#151515" stroke="#DEFF00" stroke-width="1.6"/><circle cx="17.75" cy="18" r="0.8" fill="#DEFF00"/></svg>
+                <span>Responsive Design</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="card-item" data-category="tools" data-reveal>
+            <div class="item-head">
+              <span class="item-icon" aria-hidden="true">⚡</span>
+              <h3>Tools, SEO &amp; Performance</h3>
+              <span class="badge badge-accent">Speed</span>
+            </div>
+            <p class="item-desc">Auditing page speed, markup validity, search visibility, version control, and CMS deployments.</p>
+            <div class="chip-row">
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M2.6 10.59L10.59 2.6a2.04 2.04 0 0 1 2.88 0l7.93 7.93a2.04 2.04 0 0 1 0 2.88l-7.93 7.93a2.04 2.04 0 0 1-2.88 0L2.6 13.47a2.04 2.04 0 0 1 0-2.88z" fill="#F05032"/><circle cx="12" cy="12" r="1.8" fill="#FFF"/><circle cx="12" cy="7.5" r="1.4" fill="#FFF"/><circle cx="8" cy="15.5" r="1.4" fill="#FFF"/><path d="M12 9v3l-2.6 2.5" stroke="#FFF" stroke-width="1.2"/></svg>
+                <span>Git &amp; GitHub</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#21759B"/><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-8.8 10a8.7 8.7 0 0 1 2.3-5.9l4.5 12.3A8.8 8.8 0 0 1 3.2 12zm8.8 8.8a8.7 8.7 0 0 1-2.5-.4l2.7-7.9 2.8 7.6a8.7 8.7 0 0 1-3 .7zm1.1-12.8c.6 0 1.2-.1 1.2-.1l-.1-.8s-.6.1-1.3.1c-.8 0-1.8-.3-1.8-1.3 0-.7.4-1.2 1-1.2.8 0 1.2.5 1.2.5l.8-.8s-.7-.7-1.9-.7c-1.5 0-2.5 1.1-2.5 2.5 0 2 1.9 2.6 3.4 3.8l-3.3 9.7L5.5 8.1s.6-.1 1.2-.1l-.1-.8s-.6.1-1.2.1c-.7 0-1.3-.1-1.3-.1L4 7.6c.6.1 1.1.2 1.1.8l3.6 10.7 2.1-6.4-1.5-4.1c-.5-.7-.8-.7-1.4-.7zm3.3 11.2l3.4-9.8a8.7 8.7 0 0 1-3.4 9.8z" fill="#FFF"/></svg>
+                <span>WordPress</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3a9 9 0 0 0-9 9c0 3.2 1.7 6 4.2 7.6l1.2-1.6A7 7 0 0 1 5 12a7 7 0 1 1 12.6 4.2l1.2 1.6A9 9 0 0 0 12 3z" fill="#4285F4"/><path d="M12 8a4 4 0 0 0-4 4c0 1.1.4 2.1 1.2 2.8l4.8-4.8c-.5-.6-1.2-1-2-1z" fill="#34A853"/><path d="M14.5 10.5L10 15c.6.6 1.4 1 2 1a4 4 0 0 0 4-4c0-.8-.3-1.5-.7-2-.3.2-.5.3-.8.5z" fill="#EA4335"/><polygon points="12,12 17,7 18.5,8.5 13.5,13.5" fill="#FBBC05"/></svg>
+                <span>Google PageSpeed</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FF642D"/><path d="M12 5.5l1.5 3.8 4 1.1-3 2.8.8 4-3.3-2-3.3 2 .8-4-3-2.8 4-1.1L12 5.5z" fill="#FFF"/></svg>
+                <span>Semrush</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#005A9C"/><path d="M4 8l2.2 8h1.6L9.3 11l1.5 5h1.6L14.6 8H13l-1.3 5.4L10.3 8H9l-1.4 5.4L6.3 8H4zm11.7 4.5c.8-.4 1.7-.6 2.6-.6 2.3 0 3.7 1.3 3.7 3.2 0 2.1-1.6 3.4-4 3.4-1.1 0-2.2-.3-3-.8l.6-1.5c.7.4 1.5.7 2.4.7 1.4 0 2.2-.7 2.2-1.8 0-.9-.6-1.6-2.1-1.6-.7 0-1.4.1-2 .3l-.4-1.3z" fill="#FFF"/></svg>
+                <span>W3C Validator</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1A73E8"/><path d="M12 5v2.5l3.5-3.5L12 .5V3C7.03 3 3 7.03 3 12c0 1.84.56 3.55 1.52 4.97l1.85-1.85A6.47 6.47 0 0 1 5.5 12C5.5 8.41 8.41 5.5 12 5zm6.48 2.03l-1.85 1.85A6.47 6.47 0 0 1 18.5 12c0 3.59-2.91 6.5-6.5 6.5V16l-3.5 3.5L12 23v-2.5c4.97 0 9-4.03 9-9 0-1.84-.56-3.55-1.52-4.97z" fill="#FFF"/></svg>
+                <span>reCAPTCHA API</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="card-item" data-category="databases" data-reveal>
+            <div class="item-head">
+              <span class="item-icon" aria-hidden="true">⛁</span>
+              <h3>Databases</h3>
+              <span class="badge badge-muted">Data</span>
+            </div>
+            <p class="item-desc">Relational data storage, queries, and backend lead submission handling.</p>
+            <div class="chip-row">
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#00758F"/><path fill="#F29111" d="M16.5 7.5c-1.2-1-3-1.2-4.5-.5-1.8.8-2.8 2.5-2.8 4.5 0 .8.2 1.5.5 2.2l-.7 2.3 2.3-.7c.6.3 1.3.5 2 .5 2.8 0 5-2.2 5-5 0-1.3-.5-2.4-1.8-3.3zm-3.7 6.3c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+                <span>MySQL</span>
+              </span>
+              <span class="chip">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#00BCF2" d="M12 3c-4.97 0-9 1.34-9 3v12c0 1.66 4.03 3 9 3s9-1.34 9-3V6c0-1.66-4.03-3-9-3zm0 2c4.41 0 7 1.13 7 1.5S16.41 8 12 8 5 6.87 5 6.5 7.59 5 12 5zm0 14c-4.41 0-7-1.13-7-1.5V15.3c1.78.95 4.3 1.45 7 1.45s5.22-.5 7-1.45V17.5c0 .37-2.59 1.5-7 1.5zm0-4.5c-4.41 0-7-1.13-7-1.5v-2.2c1.78.95 4.3 1.45 7 1.45s5.22-.5 7-1.45v2.2c0 .37-2.59 1.5-7 1.5z"/></svg>
+                <span>SQL</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="exp-block" data-reveal>
+          <div class="exp-head">
+            <div>
+              <span class="eyebrow">03 / EXPERIENCE</span>
+              <h2 class="section-heading">Web Developer</h2>
+              <p class="exp-company">G-Rank Digital Service Pvt. Ltd. · Hyderabad, India</p>
+            </div>
+            <span class="badge badge-accent exp-date">Jan 2024 – Present</span>
+          </div>
+
+          <ul class="clean-list">
+            <li>Developed and deployed 10+ responsive web applications using HTML5, CSS3, JavaScript, jQuery, and Bootstrap with cross-browser compatibility and mobile-first layouts.</li>
+            <li>Integrated Google reCAPTCHA and dynamic QR code generation into client web portals to improve form security and user engagement.</li>
+            <li>Implemented PHP-based mail workflows for automated brochure delivery and contact form submissions, reducing manual follow-up effort.</li>
+            <li>Performed CRM integration connecting web front-ends to back-end customer management systems via REST APIs for sales teams.</li>
+            <li>Conducted web performance and technical SEO audits using W3C Validator, Google PageSpeed Insights, and Semrush to resolve issues and improve load scores.</li>
+            <li>Led website revamp projects including UI/UX layout redesigns, legacy code refactoring, content migration, and ongoing WordPress R&amp;D and maintenance.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects & Live Client Websites -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="section-top showcase-header" data-reveal>
+          <div>
+            <span class="eyebrow">04 / LIVE WORK &amp; PROJECTS</span>
+            <h2 class="section-heading">Production Websites &amp; Landing Pages</h2>
+            <p class="section-sub">Live client websites and conversion-focused landing pages I have built, revamped, and maintained in production.</p>
+          </div>
+
+          <div class="pill-tabs showcase-filters" role="tablist" aria-label="Filter live websites">
+            <button type="button" class="pill-tab active" data-site-filter="all" role="tab" aria-selected="true">All (5)</button>
+            <button type="button" class="pill-tab" data-site-filter="corporate" role="tab" aria-selected="false">Corporate Websites (4)</button>
+            <button type="button" class="pill-tab" data-site-filter="landing" role="tab" aria-selected="false">Landing Pages (1)</button>
+          </div>
+        </div>
+
+        <!-- 5 Live Client Websites Grid -->
+        <div class="live-showcase-grid" id="liveShowcaseGrid">
+          <!-- 01: Rakshit Drugs -->
+          <a href="https://rakshitdrugspvtltd.com/" target="_blank" rel="noopener noreferrer" class="showcase-card spotlight-item" data-site-category="corporate" data-reveal>
+            <div class="showcase-preview theme-pharma">
+              <div class="browser-chrome">
+                <div class="chrome-dots">
+                  <span class="chrome-dot dot-red"></span>
+                  <span class="chrome-dot dot-yellow"></span>
+                  <span class="chrome-dot dot-green"></span>
+                </div>
+                <div class="chrome-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>rakshitdrugspvtltd.com</span>
+                </div>
+                <span class="live-pill"><span class="live-dot"></span>LIVE</span>
+              </div>
+              <div class="preview-canvas">
+                <div class="project-img-wrap">
+                  <img src="images/projects/rakshit-drugs.png" alt="Rakshit Drugs Pvt. Ltd. Live Website" class="project-img" loading="lazy" />
+                  <div class="project-img-overlay"></div>
+                </div>
+                <div class="preview-hover-badge">
+                  <span>Visit Live Site</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <span class="showcase-index">01</span>
+                <span class="badge badge-accent">Featured Client</span>
+              </div>
+              <h3 class="showcase-title">Rakshit Drugs Pvt. Ltd.</h3>
+              <p class="showcase-desc">
+                Corporate web presence for a Hyderabad-based integrated APIs and drug intermediates manufacturer, featuring responsive product pages and SEO-friendly structure.
+              </p>
+              <div class="showcase-foot">
+                <div class="chip-row">
+                  <span class="chip">Responsive UI</span>
+                  <span class="chip">Pharma</span>
+                  <span class="chip">SEO &amp; Speed</span>
+                </div>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 02: Azico Biophore -->
+          <a href="https://www.azicobiophore.com/" target="_blank" rel="noopener noreferrer" class="showcase-card spotlight-item" data-site-category="corporate" data-reveal>
+            <div class="showcase-preview theme-bio">
+              <div class="browser-chrome">
+                <div class="chrome-dots">
+                  <span class="chrome-dot dot-red"></span>
+                  <span class="chrome-dot dot-yellow"></span>
+                  <span class="chrome-dot dot-green"></span>
+                </div>
+                <div class="chrome-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>azicobiophore.com</span>
+                </div>
+                <span class="live-pill"><span class="live-dot"></span>LIVE</span>
+              </div>
+              <div class="preview-canvas">
+                <div class="project-img-wrap">
+                  <img src="images/projects/azico-biophore.png" alt="Azico Biophore Live Corporate Website" class="project-img" loading="lazy" />
+                  <div class="project-img-overlay"></div>
+                </div>
+                <div class="preview-hover-badge">
+                  <span>Visit Live Site</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <span class="showcase-index">02</span>
+                <span class="badge badge-accent">Featured Client</span>
+              </div>
+              <h3 class="showcase-title">Azico Biophore</h3>
+              <p class="showcase-desc">
+                Multi-page biopharma corporate website built for clean cross-browser compatibility, structured navigation, and fast client inquiry workflows.
+              </p>
+              <div class="showcase-foot">
+                <div class="chip-row">
+                  <span class="chip">Corporate UI</span>
+                  <span class="chip">Cross-Browser</span>
+                  <span class="chip">Forms &amp; CMS</span>
+                </div>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 03: Emnar Pharma -->
+          <a href="https://emnar.com/" target="_blank" rel="noopener noreferrer" class="showcase-card spotlight-item" data-site-category="corporate" data-reveal>
+            <div class="showcase-preview theme-emnar">
+              <div class="browser-chrome">
+                <div class="chrome-dots">
+                  <span class="chrome-dot dot-red"></span>
+                  <span class="chrome-dot dot-yellow"></span>
+                  <span class="chrome-dot dot-green"></span>
+                </div>
+                <div class="chrome-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>emnar.com</span>
+                </div>
+                <span class="live-pill"><span class="live-dot"></span>LIVE</span>
+              </div>
+              <div class="preview-canvas">
+                <div class="project-img-wrap">
+                  <img src="images/projects/emnar-pharma.png" alt="Emnar Pharma Live Website" class="project-img" loading="lazy" />
+                  <div class="project-img-overlay"></div>
+                </div>
+                <div class="preview-hover-badge">
+                  <span>Visit Live Site</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <span class="showcase-index">03</span>
+                <span class="badge badge-accent">Featured Client</span>
+              </div>
+              <h3 class="showcase-title">Emnar Pharma</h3>
+              <p class="showcase-desc">
+                Modern pharmaceutical company website crafted with responsive layouts, optimized media assets, and reliable contact integrations.
+              </p>
+              <div class="showcase-foot">
+                <div class="chip-row">
+                  <span class="chip">HTML5 / CSS3</span>
+                  <span class="chip">JavaScript</span>
+                  <span class="chip">Performance</span>
+                </div>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 04: Superolefins -->
+          <a href="https://www.superolefins.com/" target="_blank" rel="noopener noreferrer" class="showcase-card spotlight-item" data-site-category="corporate" data-reveal>
+            <div class="showcase-preview theme-industrial">
+              <div class="browser-chrome">
+                <div class="chrome-dots">
+                  <span class="chrome-dot dot-red"></span>
+                  <span class="chrome-dot dot-yellow"></span>
+                  <span class="chrome-dot dot-green"></span>
+                </div>
+                <div class="chrome-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>superolefins.com</span>
+                </div>
+                <span class="live-pill"><span class="live-dot"></span>LIVE</span>
+              </div>
+              <div class="preview-canvas">
+                <div class="project-img-wrap">
+                  <img src="images/projects/superolefins.png" alt="Superolefins Live Manufacturing Catalog Website" class="project-img" loading="lazy" />
+                  <div class="project-img-overlay"></div>
+                </div>
+                <div class="preview-hover-badge">
+                  <span>Visit Live Site</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <span class="showcase-index">04</span>
+                <span class="badge badge-accent">Featured Client</span>
+              </div>
+              <h3 class="showcase-title">Superolefins</h3>
+              <p class="showcase-desc">
+                Product showcase website for a plastics packaging manufacturer supplying stretch film, shrink hoods, gusset bags, and glass bottles.
+              </p>
+              <div class="showcase-foot">
+                <div class="chip-row">
+                  <span class="chip">Product Catalog</span>
+                  <span class="chip">Bootstrap / JS</span>
+                  <span class="chip">SEO Audits</span>
+                </div>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- 05: Delhi School Landing Page (Featured Full-Width Card) -->
+          <a href="https://disdelhi.com/best-cbse-school-in-kompally/" target="_blank" rel="noopener noreferrer" class="showcase-card showcase-featured spotlight-item" data-site-category="landing" data-reveal>
+            <div class="showcase-preview theme-landing">
+              <div class="browser-chrome">
+                <div class="chrome-dots">
+                  <span class="chrome-dot dot-red"></span>
+                  <span class="chrome-dot dot-yellow"></span>
+                  <span class="chrome-dot dot-green"></span>
+                </div>
+                <div class="chrome-url">
+                  <svg class="lock-icon" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>disdelhi.com/best-cbse-school-in-kompally</span>
+                </div>
+                <span class="live-pill"><span class="live-dot"></span>LIVE</span>
+              </div>
+              <div class="preview-canvas">
+                <!-- Interactive Multi-Banner Slider -->
+                <div class="project-slider" id="delhiSchoolSlider">
+                  <div class="slider-track">
+                    <div class="slider-slide active" data-index="0">
+                      <img src="images/projects/delhi-slide-1.webp" alt="Delhi International School CBSE Admissions Banner" class="project-img" loading="lazy" />
+                      <div class="slide-caption">CBSE Admissions &amp; Excellence 2024–25</div>
+                    </div>
+                    <div class="slider-slide" data-index="1">
+                      <img src="images/projects/delhi-slide-2.jpg" alt="Delhi International School Jumpstart Early Years" class="project-img" loading="lazy" />
+                      <div class="slide-caption">Early Childhood &amp; Jumpstart Programs</div>
+                    </div>
+                    <div class="slider-slide" data-index="2">
+                      <img src="images/projects/delhi-slide-3.jpeg" alt="Delhi International School 20+ Years Legacy" class="project-img" loading="lazy" />
+                      <div class="slide-caption">20+ Years Legacy of Academic Excellence</div>
+                    </div>
+                  </div>
+
+                  <!-- Slider Nav Arrows -->
+                  <button type="button" class="slider-nav-btn prev" aria-label="Previous slide">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                  </button>
+                  <button type="button" class="slider-nav-btn next" aria-label="Next slide">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+
+                  <!-- Slider Dots -->
+                  <div class="slider-dots" role="tablist" aria-label="Slide dots">
+                    <button type="button" class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button type="button" class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button type="button" class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+                  </div>
+
+                  <!-- Slide Counter -->
+                  <div class="slider-counter">
+                    <span class="current-slide">1</span> / <span>3</span>
+                  </div>
+
+                  <div class="project-img-overlay"></div>
+                </div>
+
+                <div class="preview-hover-badge">
+                  <span>Visit Landing Page</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <span class="showcase-index">05</span>
+                <span class="badge badge-accent">Featured Campaign Landing</span>
+              </div>
+              <h3 class="showcase-title">Delhi International School — Kompally</h3>
+              <p class="showcase-desc">
+                Dedicated high-converting admissions landing page built for CBSE school campaigns in Kompally—featuring fast mobile rendering, an interactive admissions banner slider, clear trust sections, and streamlined parent inquiry lead capture.
+              </p>
+              <div class="showcase-foot">
+                <div class="chip-row">
+                  <span class="chip">Conversion Landing Page</span>
+                  <span class="chip">Interactive Slider</span>
+                  <span class="chip">Lead Capture Form</span>
+                  <span class="chip">Mobile-First UI</span>
+                </div>
+                <span class="circle-arrow" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Engineering Case Studies Sub-block -->
+        <div class="case-studies-sub" data-reveal>
+          <div class="sub-section-head">
+            <span class="eyebrow">ENGINEERING CASE STUDIES</span>
+            <h3 class="sub-heading">Architecture &amp; Technical Highlights</h3>
+          </div>
+
+          <div class="two-col-grid">
+            <article class="card-item project-item">
+              <div class="item-head">
+                <h3>Responsive Multi-Page Business Website</h3>
+                <span class="badge badge-accent">2024</span>
+              </div>
+              <p class="item-desc">
+                Built a responsive multi-page client website using HTML5, CSS3, Bootstrap, and JavaScript, featuring PHP mailer contact/brochure forms and Google reCAPTCHA spam protection. Optimized assets and compressed images for a 30% PageSpeed score improvement.
+              </p>
+              <div class="chip-row">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">Bootstrap</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">PHP Mailer</span>
+                <span class="chip">reCAPTCHA</span>
+              </div>
+              <div class="item-actions">
+                <button type="button" class="btn btn-outline btn-sm open-modal-btn" data-project-id="business-site">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="card-item project-item">
+              <div class="item-head">
+                <h3>CRM-Integrated Lead Capture Portal</h3>
+                <span class="badge badge-accent">2024</span>
+              </div>
+              <p class="item-desc">
+                Designed and developed a lead capture portal that sends website form submissions directly into a CRM platform through a REST API, eliminating manual sales data entry. Secured with real-time JavaScript validation and server-side PHP validation.
+              </p>
+              <div class="chip-row">
+                <span class="chip">JavaScript</span>
+                <span class="chip">REST API</span>
+                <span class="chip">CRM Integration</span>
+                <span class="chip">PHP Validation</span>
+              </div>
+              <div class="item-actions">
+                <button type="button" class="btn btn-outline btn-sm open-modal-btn" data-project-id="crm-portal">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="card-item project-item">
+              <div class="item-head">
+                <h3>Website Revamps, QR &amp; SEO Audits</h3>
+                <span class="badge badge-muted">G-Rank</span>
+              </div>
+              <p class="item-desc">
+                Redesigned legacy client websites, refactored front-end code, added dynamic QR code and automated brochure delivery workflows, and maintained WordPress themes and plugins alongside W3C, PageSpeed, and Semrush audits.
+              </p>
+              <div class="chip-row">
+                <span class="chip">WordPress</span>
+                <span class="chip">Dynamic QR</span>
+                <span class="chip">PageSpeed Insights</span>
+                <span class="chip">Semrush</span>
+                <span class="chip">W3C Validator</span>
+              </div>
+              <div class="item-actions">
+                <button type="button" class="btn btn-outline btn-sm open-modal-btn" data-project-id="revamp-suite">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="section-top" data-reveal>
+          <span class="eyebrow">05 / CREDENTIALS</span>
+          <h2 class="section-heading">Education &amp; Certifications</h2>
+        </div>
+
+        <div class="two-col-grid">
+          <div class="card-item" data-reveal>
+            <div class="item-head">
+              <h3>Education</h3>
+              <span class="badge badge-muted">2017 – 2023</span>
+            </div>
+            <div class="edu-stack">
+              <div class="edu-row">
+                <div class="edu-title">B.Tech, Mechanical Engineering</div>
+                <div class="edu-meta">RGUKT IIIT Basar, Nirmal · 2019 – 2023 · <strong>CGPA: 7.6 / 10</strong></div>
+              </div>
+              <div class="edu-row">
+                <div class="edu-title">Pre-University Course (MPC – 12th Grade)</div>
+                <div class="edu-meta">RGUKT IIIT Basar, Nirmal · 2017 – 2019 · <strong>CGPA: 7.55 / 10</strong></div>
+              </div>
+              <div class="edu-row">
+                <div class="edu-title">Secondary School Certificate (10th Grade)</div>
+                <div class="edu-meta">Alphores High School, Gopalraopet · 2017 · <strong>CGPA: 10.0 / 10</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-item" data-reveal>
+            <div class="item-head">
+              <h3>Certifications &amp; Leadership</h3>
+              <span class="badge badge-accent">Verified</span>
+            </div>
+            <ul class="clean-list compact">
+              <li><strong>Web Development Experience (2.5+ Years)</strong> — G-Rank Digital Service Pvt. Ltd., Hyderabad</li>
+              <li><strong>Front-End Web Development</strong> — NxtWave Disruptive Technologies</li>
+              <li><strong>Python Programming</strong> — NxtWave Disruptive Technologies</li>
+            </ul>
+
+            <div class="sub-block">
+              <h4>Activities &amp; Languages</h4>
+              <p class="item-desc">
+                Technical Volunteer at Abhiyanth Tech Fest (500+ participants), NSS Volunteer at RGUKT IIIT Basar, and Cricket Team Captain. Languages: English (Professional), Telugu (Native), Hindi (Conversational).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration Section (No Form, Enhanced Content Hub) -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="section-top" data-reveal>
+          <span class="eyebrow">06 / GET IN TOUCH</span>
+          <h2 class="section-heading">Let’s build high-impact web applications.</h2>
+          <p class="section-sub">
+            Available for immediate full-time roles, engineering collaborations, and high-impact web development. Reach out directly through any channel below.
+          </p>
+        </div>
+
+        <div class="contact-layout" data-reveal>
+          <!-- Left Column: Availability & Value Pitch -->
+          <div class="contact-lead-card">
+            <span class="contact-lead-badge">
+              <span class="status-pulse-dot" aria-hidden="true"></span>
+              <span>Available for Immediate Joining</span>
+            </span>
+
+            <h3 class="contact-lead-title">
+              Ready to bring fast turnaround &amp; clean web engineering to your team.
+            </h3>
+
+            <p class="contact-lead-text">
+              Whether you need a <strong>Frontend Developer</strong>, <strong>React.js Developer</strong>, <strong>Web Developer</strong>, or <strong>Software Development Engineer (SDE)</strong>, I bring hands-on experience across 10+ live client deployments, technical SEO audits, and robust CRM/API integrations.
+            </p>
+
+            <div class="contact-availability-box">
+              <div class="avail-row">
+                <span class="avail-label">Current Status:</span>
+                <span class="avail-val text-accent">Active &amp; Interview Ready</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-label">Target Roles:</span>
+                <span class="avail-val">Frontend Developer • React.js Developer • SDE</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-label">Location / Mode:</span>
+                <span class="avail-val">Hyderabad, India (Open to Remote, Hybrid &amp; On-Site)</span>
+              </div>
+            </div>
+
+            <!-- Brochure Download Action Button -->
+            <div class="contact-resumes-wrap">
+              <span class="contact-resumes-title">OFFICIAL BROCHURE:</span>
+              <div class="contact-resumes-row">
+                <a href="Prashanth_Punna_Resume.pdf" download="Prashanth_Punna_Brochure.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Download Brochure</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Direct Connect Cards Stack -->
+          <div class="contact-cards-stack">
+            <!-- Email Card -->
+            <div class="contact-hub-card">
+              <div class="hub-card-head">
+                <span class="hub-card-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <span>Direct Email</span>
+                </span>
+                <span class="badge badge-accent">Fastest Response</span>
+              </div>
+              <div class="hub-card-value">
+                <a href="mailto:punnaaprashanth@gmail.com">punnaaprashanth@gmail.com</a>
+              </div>
+              <p class="hub-card-desc">
+                Ideal for role opportunities, interview invitations, or client development requests. Typically replies within 2–4 hours.
+              </p>
+              <div class="hub-card-actions">
+                <a href="mailto:punnaaprashanth@gmail.com" class="btn btn-accent btn-xs">
+                  <span>Send Email</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="punnaaprashanth@gmail.com" data-label="Email copied to clipboard">
+                  <span>Copy Address</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Phone & WhatsApp Card -->
+            <div class="contact-hub-card">
+              <div class="hub-card-head">
+                <span class="hub-card-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>Phone &amp; WhatsApp</span>
+                </span>
+                <span class="badge">Mon–Sat 9AM–8PM IST</span>
+              </div>
+              <div class="hub-card-value">
+                <a href="tel:+919705742383">+91-9705742383</a>
+              </div>
+              <p class="hub-card-desc">
+                Available for direct recruiter phone screens, technical discussions, or instant WhatsApp messaging.
+              </p>
+              <div class="hub-card-actions">
+                <a href="https://wa.me/919705742383" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-xs">
+                  <span>WhatsApp Chat</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+                <a href="tel:+919705742383" class="btn btn-outline btn-xs">
+                  <span>Call Directly</span>
+                </a>
+                <button type="button" class="btn btn-outline btn-xs copy-trigger" data-copy="+91-9705742383" data-label="Phone number copied">
+                  <span>Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <div class="contact-hub-card">
+              <div class="hub-card-head">
+                <span class="hub-card-tag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  <span>Professional Network</span>
+                </span>
+                <span class="badge badge-accent">Verified Profile</span>
+              </div>
+              <div class="hub-card-value">
+                <a href="https://linkedin.com/in/punnaprashanth" target="_blank" rel="noopener noreferrer">linkedin.com/in/punnaprashanth</a>
+              </div>
+              <p class="hub-card-desc">
+                Connect on LinkedIn to review verified career recommendations, professional network connections, and live engineering updates.
+              </p>
+              <div class="hub-card-actions">
+                <a href="https://linkedin.com/in/punnaprashanth" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-xs">
+                  <span>View LinkedIn Profile</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Inspired by Diligent React Index-3) -->
+  <footer class="footer-one" data-reveal>
+    <!-- Floating Ambient Graphic Accents -->
+    <div class="footer-shape footer-shape-1 float-bob-x" aria-hidden="true"></div>
+    <div class="footer-shape footer-shape-2 float-bob-y" aria-hidden="true"></div>
+
+    <!-- Main Footer Upper Area -->
+    <div class="footer-main">
+      <div class="container footer-main-container">
+        <!-- Floating Web Developer Badges Left & Right (Diligent Theme Style) -->
+        <div class="footer-one__img1 float-bob-x" aria-hidden="true">
+          <div class="dev-float-card">
+            <div class="dev-float-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#61DAFB" stroke-width="1.8">
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)" />
+                <circle cx="12" cy="12" r="2" fill="#61DAFB" />
+              </svg>
+            </div>
+            <div class="dev-float-info">
+              <span class="dev-float-name">Frontend Architecture</span>
+              <span class="dev-float-sub">React 19 &amp; Next.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-one__img2 float-bob-y" aria-hidden="true">
+          <div class="dev-float-card">
+            <div class="dev-float-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#DEFF00">
+                <path d="M13 2L3 14h8l-1 8 11-12h-8l1-8z" />
+              </svg>
+            </div>
+            <div class="dev-float-info">
+              <span class="dev-float-name">Web Performance</span>
+              <span class="dev-float-sub">+30% PageSpeed Boost</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-main__inner text-center">
+          <!-- Centered Brand Logo Box -->
+          <div class="footer-one__logo-box">
+            <a href="#hero" class="footer-logo-brand">
+              <div class="footer-brand-logo">
+                <svg class="dev-logo-svg" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="footerDevBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1A1D23"/>
+                      <stop offset="100%" stop-color="#0E1013"/>
+                    </linearGradient>
+                    <linearGradient id="footerDevRing" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#DEFF00"/>
+                      <stop offset="100%" stop-color="#9BC000"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="22" cy="22" r="20.5" fill="url(#footerDevBg)" stroke="url(#footerDevRing)" stroke-width="1.8"/>
+                  <!-- Dark Tech Hoodie Body -->
+                  <path d="M10 40c0-6.2 5.4-11 12-11s12 4.8 12 11" fill="#1F242C"/>
+                  <!-- Hoodie Inner Collar / V-neck -->
+                  <path d="M17.5 29l4.5 4.5 4.5-4.5" fill="#14171C" stroke="#DEFF00" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- Neck -->
+                  <path d="M19 23h6v6.5h-6z" fill="#E5B582"/>
+                  <!-- Face -->
+                  <path d="M15 17c0 4.2 3.1 7.2 7 7.2s7-3 7-7.2v-2.5H15V17z" fill="#F0C294"/>
+                  <!-- Sharp Modern Hairstyle (Textured Quiff) -->
+                  <path d="M14.5 16.5c-.3-4 1.8-8.5 7.5-8.5 5.2 0 7.8 3.5 7.8 7.5 0 .8-.1 1.5-.3 2-1-.8-2.6-1.2-4.5-1.2-2.8 0-4.5.8-6.5.4-.8-.1-2.2-.4-4-.2z" fill="#181B20"/>
+                  <path d="M16 11c3-2.5 8-2.8 11.5-.5-1.2-.8-3.5-1.5-6-1.5-2.5 0-4.2.8-5.5 2z" fill="#2C323D"/>
+                  <!-- Sleek Black Acetate Glasses with Lime Highlight -->
+                  <rect x="16.2" y="16.2" width="4.8" height="3.4" rx="1" fill="#111317" stroke="#DEFF00" stroke-width="0.9"/>
+                  <rect x="23" y="16.2" width="4.8" height="3.4" rx="1" fill="#111317" stroke="#DEFF00" stroke-width="0.9"/>
+                  <line x1="21" y1="17.6" x2="23" y2="17.6" stroke="#DEFF00" stroke-width="0.9"/>
+                  <line x1="17.2" y1="17" x2="19.8" y2="17" stroke="#FFFFFF" stroke-width="0.75" stroke-linecap="round" opacity="0.85"/>
+                  <line x1="24" y1="17" x2="26.6" y2="17" stroke="#FFFFFF" stroke-width="0.75" stroke-linecap="round" opacity="0.85"/>
+                  <!-- Confident Smile -->
+                  <path d="M20.2 21.6c1 .6 2.6 .6 3.6 0" stroke="#8C5E3C" stroke-width="1" stroke-linecap="round"/>
+                  <!-- Code Bracket Badge floating in lower corner -->
+                  <g transform="translate(24, 26)">
+                    <circle cx="7" cy="7" r="6" fill="#0E1013" stroke="#DEFF00" stroke-width="1.2"/>
+                    <path d="M5.5 5.5L4 7l1.5 1.5M8.5 5.5L10 7l-1.5 1.5M7.8 5l-1.6 4" stroke="#DEFF00" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="footer-logo-name">&lt;Prashanth <span class="accent-text">Punna</span>/&gt;</span>
+            </a>
+          </div>
+
+          <!-- Big Title -->
+          <div class="footer-one__big-title">
+            <h2>Let’s Talk with Me!</h2>
+          </div>
+
+          <!-- Text Box -->
+          <div class="footer-one__text-box">
+            <p>
+              Looking for a Web Developer, React.js Developer, or Frontend Engineer?
+              <br />
+              Let’s build fast, responsive, and high-converting web applications together.
+            </p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="footer-one__socel-link">
+            <ul class="footer-social-list clearfix">
+              <li>
+                <a href="https://linkedin.com/in/punnaprashanth" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:punnaaprashanth@gmail.com" aria-label="Email" title="Email">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="tel:+919705742383" aria-label="Phone" title="Phone">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="Prashanth_Punna_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF" title="Resume PDF">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Footer Area (Theme Matching Alignment) -->
+    <div class="footer-middle">
+      <div class="container">
+        <div class="footer-middle__inner">
+          <div class="copyright-menu">
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Live Work</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-middle__mail-box">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="text">
+              <p><a href="mailto:punnaaprashanth@gmail.com">punnaaprashanth@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Area -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__inner">
+          <div class="copyright-text text-center">
+            <p>Copyright &copy; 2026 <span>Prashanth Punna</span> — All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed Global Scroll To Top Button (Diligent Theme Style) -->
+  <button type="button" class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top" title="Scroll to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Project Details Modal -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <span class="badge badge-accent" id="modalBadge">2024</span>
+      <h3 class="modal-title" id="modalTitle">Project Title</h3>
+      <p class="modal-desc" id="modalDesc"></p>
+
+      <div class="modal-block">
+        <h4>Key Implementation Details</h4>
+        <ul class="clean-list compact" id="modalBullets"></ul>
+      </div>
+
+      <div class="modal-block">
+        <h4>Outcome</h4>
+        <p class="modal-outcome" id="modalOutcome"></p>
+      </div>
+
+      <div class="chip-row" id="modalTags"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- GSAP & ScrollTrigger for kinetic text wave animation (PrimeFPrint style) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
