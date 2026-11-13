@@ -897,6 +897,7 @@ img {
 .btn-quote span,
 .btn-quote svg {
   color: inherit;
+  stroke: currentColor;
   transition: color 0.3s ease;
 }
 
@@ -978,63 +979,105 @@ img {
 }
 
 /* Light Mode Explicit High-Contrast Button Rules */
-[data-theme="light"] .btn-quote {
+html[data-theme="light"] .btn-quote:not(.btn-trasp),
+body[data-theme="light"] .btn-quote:not(.btn-trasp),
+[data-theme="light"] .btn-quote:not(.btn-trasp),
+[data-theme="light"] a.btn-quote:not(.btn-trasp) {
   background: #111315 !important;
+  background-color: #111315 !important;
   color: #FFFFFF !important;
   border-color: #111315 !important;
   box-shadow: 0 10px 24px -6px rgba(17, 19, 21, 0.28) !important;
 }
 
-[data-theme="light"] .btn-quote span,
-[data-theme="light"] .btn-quote svg {
+html[data-theme="light"] .btn-quote:not(.btn-trasp) *,
+body[data-theme="light"] .btn-quote:not(.btn-trasp) *,
+[data-theme="light"] .btn-quote:not(.btn-trasp) *,
+[data-theme="light"] a.btn-quote:not(.btn-trasp) *,
+[data-theme="light"] .btn-quote:not(.btn-trasp) span,
+[data-theme="light"] .btn-quote:not(.btn-trasp) svg,
+[data-theme="light"] .btn-quote:not(.btn-trasp) svg path,
+[data-theme="light"] .btn-quote:not(.btn-trasp) svg circle,
+[data-theme="light"] .btn-quote:not(.btn-trasp) svg line,
+[data-theme="light"] .btn-quote:not(.btn-trasp) svg rect {
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
+  fill: none !important;
 }
 
-[data-theme="light"] .btn-quote:hover {
+html[data-theme="light"] .btn-quote:not(.btn-trasp):hover,
+html[data-theme="light"] .btn-quote:not(.btn-trasp):focus,
+html[data-theme="light"] .btn-quote:not(.btn-trasp):active,
+[data-theme="light"] .btn-quote:not(.btn-trasp):hover,
+[data-theme="light"] .btn-quote:not(.btn-trasp):focus,
+[data-theme="light"] .btn-quote:not(.btn-trasp):active {
   background: #23272E !important;
+  background-color: #23272E !important;
   border-color: #23272E !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
   box-shadow: 0 14px 30px -4px rgba(17, 19, 21, 0.35) !important;
 }
 
-[data-theme="light"] .btn-quote:hover span,
-[data-theme="light"] .btn-quote:hover svg {
+html[data-theme="light"] .btn-quote:not(.btn-trasp):hover *,
+html[data-theme="light"] .btn-quote:not(.btn-trasp):focus *,
+html[data-theme="light"] .btn-quote:not(.btn-trasp):active *,
+[data-theme="light"] .btn-quote:not(.btn-trasp):hover *,
+[data-theme="light"] .btn-quote:not(.btn-trasp):focus *,
+[data-theme="light"] .btn-quote:not(.btn-trasp):active * {
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
 }
 
-[data-theme="light"] .btn-quote::after {
+html[data-theme="light"] .btn-quote:not(.btn-trasp)::after,
+[data-theme="light"] .btn-quote:not(.btn-trasp)::after {
   display: none !important;
 }
 
-[data-theme="light"] .btn-trasp {
+/* Light Mode Secondary Outline Button */
+html[data-theme="light"] .btn-quote.btn-trasp,
+body[data-theme="light"] .btn-quote.btn-trasp,
+[data-theme="light"] .btn-trasp,
+[data-theme="light"] a.btn-trasp {
   background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   color: #111315 !important;
   border: 2px solid #111315 !important;
   box-shadow: 0 4px 14px rgba(17, 19, 21, 0.08) !important;
 }
 
+html[data-theme="light"] .btn-quote.btn-trasp *,
+body[data-theme="light"] .btn-quote.btn-trasp *,
+[data-theme="light"] .btn-trasp *,
 [data-theme="light"] .btn-trasp span,
-[data-theme="light"] .btn-trasp svg {
+[data-theme="light"] .btn-trasp svg,
+[data-theme="light"] .btn-trasp svg path,
+[data-theme="light"] .btn-trasp svg polyline,
+[data-theme="light"] .btn-trasp svg line {
   color: #111315 !important;
   stroke: #111315 !important;
 }
 
-[data-theme="light"] .btn-trasp:hover {
+html[data-theme="light"] .btn-quote.btn-trasp:hover,
+html[data-theme="light"] .btn-quote.btn-trasp:focus,
+[data-theme="light"] .btn-trasp:hover,
+[data-theme="light"] .btn-trasp:focus {
   background: #111315 !important;
+  background-color: #111315 !important;
   color: #FFFFFF !important;
   border-color: #111315 !important;
   box-shadow: 0 12px 28px -6px rgba(17, 19, 21, 0.28) !important;
 }
 
-[data-theme="light"] .btn-trasp:hover span,
-[data-theme="light"] .btn-trasp:hover svg {
+html[data-theme="light"] .btn-quote.btn-trasp:hover *,
+html[data-theme="light"] .btn-quote.btn-trasp:focus *,
+[data-theme="light"] .btn-trasp:hover *,
+[data-theme="light"] .btn-trasp:focus * {
   color: #FFFFFF !important;
   stroke: #FFFFFF !important;
 }
 
+html[data-theme="light"] .btn-quote.btn-trasp::after,
 [data-theme="light"] .btn-trasp::after {
   background-color: #111315 !important;
 }

@@ -330,7 +330,63 @@
     localStorage.setItem('prashanth-theme', 'dark');
   }
 
+  const applyThemeRuntimeStyles = (theme) => {
+    const isLight = theme === 'light';
+    // 1. Primary Solid Buttons (Explore Live Work, Get in Touch)
+    document.querySelectorAll('.btn-quote:not(.btn-trasp)').forEach(btn => {
+      if (isLight) {
+        btn.style.setProperty('background-color', '#111315', 'important');
+        btn.style.setProperty('background', '#111315', 'important');
+        btn.style.setProperty('color', '#FFFFFF', 'important');
+        btn.style.setProperty('border-color', '#111315', 'important');
+        btn.querySelectorAll('*').forEach(el => {
+          el.style.setProperty('color', '#FFFFFF', 'important');
+          if (el.tagName.toLowerCase() !== 'span') {
+            el.style.setProperty('stroke', '#FFFFFF', 'important');
+            el.style.setProperty('fill', 'none', 'important');
+          }
+        });
+      } else {
+        btn.style.removeProperty('background-color');
+        btn.style.removeProperty('background');
+        btn.style.removeProperty('color');
+        btn.style.removeProperty('border-color');
+        btn.querySelectorAll('*').forEach(el => {
+          el.style.removeProperty('color');
+          el.style.removeProperty('stroke');
+          el.style.removeProperty('fill');
+        });
+      }
+    });
+
+    // 2. Secondary Outline Buttons (Let's Connect, Download Resume)
+    document.querySelectorAll('.btn-quote.btn-trasp').forEach(btn => {
+      if (isLight) {
+        btn.style.setProperty('background-color', '#FFFFFF', 'important');
+        btn.style.setProperty('background', '#FFFFFF', 'important');
+        btn.style.setProperty('color', '#111315', 'important');
+        btn.style.setProperty('border', '2px solid #111315', 'important');
+        btn.querySelectorAll('*').forEach(el => {
+          el.style.setProperty('color', '#111315', 'important');
+          if (el.tagName.toLowerCase() !== 'span') {
+            el.style.setProperty('stroke', '#111315', 'important');
+          }
+        });
+      } else {
+        btn.style.removeProperty('background-color');
+        btn.style.removeProperty('background');
+        btn.style.removeProperty('color');
+        btn.style.removeProperty('border');
+        btn.querySelectorAll('*').forEach(el => {
+          el.style.removeProperty('color');
+          el.style.removeProperty('stroke');
+        });
+      }
+    });
+  };
+
   htmlEl.setAttribute('data-theme', savedTheme);
+  applyThemeRuntimeStyles(savedTheme);
 
   themeToggle?.addEventListener('click', () => {
     const current = htmlEl.getAttribute('data-theme') || 'dark';
@@ -338,6 +394,7 @@
     htmlEl.setAttribute('data-theme', next);
     localStorage.setItem('prashanth-theme', next);
     localStorage.setItem('prashanth-theme-v5', next);
+    applyThemeRuntimeStyles(next);
   });
 
   /* -------------------------------------------------------
