@@ -17,50 +17,30 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Web Developer Console Preloader -->
+  <!-- Web Developer Simple Preloader -->
   <aside class="site-preloader" id="sitePreloader" aria-label="Loading portfolio">
-    <div class="preloader-terminal">
-      <div class="preloader-bar">
-        <div class="preloader-dots">
-          <span class="p-dot red"></span>
-          <span class="p-dot yellow"></span>
-          <span class="p-dot green"></span>
-        </div>
-        <div class="preloader-title">prashanth.config.js</div>
-        <div class="preloader-tag">&lt;DEV/&gt;</div>
+    <div class="preloader-content">
+      <!-- Web Dev Animated Code Bracket Icon -->
+      <div class="preloader-badge">
+        <svg class="preloader-code-icon" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6" stroke="#ffffff"/>
+          <polyline points="8 6 2 12 8 18" stroke="#ffffff"/>
+          <line x1="14" y1="4" x2="10" y2="20" stroke="var(--accent)"/>
+        </svg>
       </div>
 
-      <div class="preloader-console">
-        <div class="preloader-code-line">
-          <span class="p-keyword">const</span> <span class="p-var">developer</span> = <span class="p-bracket">{</span>
-        </div>
-        <div class="preloader-code-line indent">
-          <span class="p-prop">name:</span> <span class="p-str">"Prashanth Punna"</span>,
-        </div>
-        <div class="preloader-code-line indent">
-          <span class="p-prop">role:</span> <span class="p-str">"Web Developer"</span>,
-        </div>
-        <div class="preloader-code-line indent">
-          <span class="p-prop">experience:</span> <span class="p-num">2.5</span> <span class="p-comment">// years</span>,
-        </div>
-        <div class="preloader-code-line indent">
-          <span class="p-prop">status:</span> <span class="p-accent" id="preloaderStatusText">"compiling_bundle..."</span>
-        </div>
-        <div class="preloader-code-line">
-          <span class="p-bracket">};</span>
-        </div>
+      <!-- Live Percentage Number up to 100% -->
+      <div class="preloader-percent-wrap">
+        <span class="preloader-percent-num" id="preloaderPercent">0</span>
+        <span class="preloader-percent-symbol">%</span>
       </div>
 
-      <!-- Loading Progress Indicator -->
-      <div class="preloader-progress-wrap">
-        <div class="preloader-progress-bar">
-          <div class="preloader-progress-fill" id="preloaderFill"></div>
-        </div>
-        <div class="preloader-footer">
-          <span class="preloader-task-label" id="preloaderTaskLabel">INITIALIZING COMPONENT MATRIX</span>
-          <span class="preloader-percent" id="preloaderPercent">0%</span>
-        </div>
+      <!-- Minimalist Progress Bar -->
+      <div class="preloader-line-track">
+        <div class="preloader-line-fill" id="preloaderFill"></div>
       </div>
+
+      <div class="preloader-subtext">PRASHANTH PUNNA &bull; PORTFOLIO</div>
     </div>
   </aside>
 

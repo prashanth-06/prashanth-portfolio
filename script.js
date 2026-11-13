@@ -886,9 +886,9 @@
   }
 
   /* -------------------------------------------------------
-     12. Developer Terminal Preloader Controller
+     12. Web Developer Minimalist Preloader Controller
      ------------------------------------------------------- */
-  function initTerminalPreloader(onComplete) {
+  function initSimplePreloader(onComplete) {
     const preloader = document.getElementById('sitePreloader');
     if (!preloader) {
       if (typeof onComplete === 'function') onComplete();
@@ -897,8 +897,6 @@
 
     const fill = document.getElementById('preloaderFill');
     const percentEl = document.getElementById('preloaderPercent');
-    const statusText = document.getElementById('preloaderStatusText');
-    const taskLabel = document.getElementById('preloaderTaskLabel');
 
     let current = 0;
     let dismissed = false;
@@ -908,13 +906,11 @@
       dismissed = true;
 
       if (fill) fill.style.width = '100%';
-      if (percentEl) percentEl.textContent = '100%';
-      if (statusText) statusText.textContent = '"ready!"';
-      if (taskLabel) taskLabel.textContent = 'STATUS: PRODUCTION READY (200 OK)';
+      if (percentEl) percentEl.textContent = '100';
 
       preloader.classList.add('done');
 
-      // Trigger hero kinetic cascade as preloader slides away
+      // Trigger hero kinetic cascade smoothly as preloader lifts
       if (typeof onComplete === 'function') {
         setTimeout(onComplete, 120);
       }
@@ -930,8 +926,8 @@
       if (e.key === 'Escape' && !dismissed) dismissPreloader();
     }, { once: true });
 
-    // Safety fallback: dismiss within 1.8s max
-    const safetyTimer = setTimeout(dismissPreloader, 1800);
+    // Safety fallback: dismiss within 1.6s max
+    const safetyTimer = setTimeout(dismissPreloader, 1600);
 
     if (prefersReducedMotion) {
       clearTimeout(safetyTimer);
@@ -940,47 +936,25 @@
     }
 
     const startTime = performance.now();
-    const duration = 1050; // Snappy ~1.05s developer compiling effect
+    const duration = 850; // Snappy 850ms count up
 
     function step(timestamp) {
       if (dismissed) return;
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
 
-      // Ease out cubic for realistic compile rush
+      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       current = Math.min(100, Math.floor(eased * 100));
 
       if (fill) fill.style.width = current + '%';
-      if (percentEl) percentEl.textContent = current + '%';
-
-      if (taskLabel) {
-        if (current < 25) {
-          taskLabel.textContent = 'INITIALIZING MODULES & DOM...';
-        } else if (current < 55) {
-          taskLabel.textContent = 'COMPILING VITE BUNDLE & SVGS...';
-        } else if (current < 85) {
-          taskLabel.textContent = 'OPTIMIZING LIGHTHOUSE CORE VITALS...';
-        } else {
-          taskLabel.textContent = 'HYDRATING INTERACTIVE UI...';
-        }
-      }
-
-      if (statusText) {
-        if (current < 50) {
-          statusText.textContent = '"compiling_bundle..."';
-        } else if (current < 90) {
-          statusText.textContent = '"linking_modules..."';
-        } else {
-          statusText.textContent = '"ready!"';
-        }
-      }
+      if (percentEl) percentEl.textContent = current;
 
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
         clearTimeout(safetyTimer);
-        setTimeout(dismissPreloader, 140);
+        setTimeout(dismissPreloader, 90);
       }
     }
 
@@ -989,10 +963,10 @@
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      initTerminalPreloader(initKineticHeadingAnimations);
+      initSimplePreloader(initKineticHeadingAnimations);
     });
   } else {
-    initTerminalPreloader(initKineticHeadingAnimations);
+    initSimplePreloader(initKineticHeadingAnimations);
   }
 
   // End of initialization
